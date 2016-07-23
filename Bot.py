@@ -22,7 +22,7 @@ class YourBot(telepot.Bot):
             self.sendMessage(chat_id,'Properties')
         elif command == '/pay':
             #open form incuding credit vard details
-            url='https://github.com/Semenka/Courier_bot/blob/master/Payment_form.html'
+            url='https://semenka.github.io/Courier_bot/'
             webbrowser.open_new(url)
         print(msg['text'])
 
