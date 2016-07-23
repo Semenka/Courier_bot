@@ -1,0 +1,31 @@
+paypalrestsdk.configure({
+  "mode": "live", # sandbox or live
+  "client_id": "AdY-aMhhw9Oqtpqb9mltlAEdvgRKa4-rq37_sN1xgVm9a7gpr6UckugeN73EHw-GX2TSHrgIsh1tWUrW",
+  "client_secret": "EMVGi8zO4PdtrbiqMFbvQFR3Wpo1jVzKCKV17Dyai-y_FnIuL65aYv9saoCvylADy1gdWgpVudYsCRE6" })
+
+
+payment = paypalrestsdk.Payment({
+  "intent": "sale",
+  "payer": {
+    "payment_method": "credit_card",
+    "funding_instruments": [{
+      "credit_card": {
+        "type": "visa",
+        "number": "4648420020326773",
+        "expire_month": "07",
+        "expire_year": "2017",
+        "cvv2": "798",
+        "first_name": "Andrey",
+        "last_name": "Semenov" }}]},
+  "transactions": [{
+    "item_list": {
+      "items": [{
+        "name": "item",
+        "sku": "item",
+        "price": "0.01",
+        "currency": "USD",
+        "quantity": 1 }]},
+    "amount": {
+      "total": "0.01",
+      "currency": "USD" },
+    "description": "This is the payment transaction description." }]})
